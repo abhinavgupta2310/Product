@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Buy | Sell Products</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+       <!-- heading  -->
+      <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2" style="text-align: center;">
+          <button type="button" class="btn btn-primary btn-lg" style="margin-top: 1em; width: 100%;" onclick="App.displayAddProductPage()">ADD NEW</button>
+        </div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-md-8" style="text-align: center;">
+          <h1 style="font-weight: 800; background-color: black;color: white;">WELCOME TO MY SHOP</h1>
+        </div> 
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2" style="text-align: center;">
+          <button type="button" class="btn btn-primary btn-lg" style="margin-top: 1em; width: 100%;" onclick="App.displayBuyProductPage()">BUY</button>
+        </div>       
+      </div>
+      <br>
+      <br><br>
+      <!-- list all the products in the blcochain -->
+      <div class="row" id="displayProductPage">
+          <div class="col col-12">
+            <table class="table">
+              <tr>
+                <td colspan="5" style="text-align: center;"><h2 style="background-color: blue;color: white;">PRODUCT LIST</h2></td>
+              </tr>
+              <tr>   
+                  <th>ID</th>           
+                  <th>Manufacturer</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>quatity</th>                
+              </tr>
+              <tbody id="addproducts">
+
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      <!-- adding a new product -->
+      <div class="row" style="display: none;" id="addProductPage">
+          <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+          <div class="col col-12 col-sm-8 col-lg-8 col-md-8">
+              <table class="table">
+                <tr>
+                  <td colspan="2" style="text-align: center;"><h2 style="background-color: blue;color: white;">ADD NEW PRODUCT</h2></td>
+                </tr>
+                <tr>
+                  <td><h4 style="color: blue;" >Product Name</h4></td>
+                  <td><input type="text" class="form-control" id="n"></td>
+                </tr>
+                <tr>
+                  <td><h4 style="color: blue;" >Quantity</h4></td>
+                  <td><input type="number" class="form-control" id="q"></td>
+                </tr>
+                <tr>
+                  <td><h4 style="color: blue;" >Price</h4></td>
+                  <td><input type="number" class="form-control" id="p"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="text-align: center;">
+                    <button type="button" class="btn btn-primary btn-lg" style="width: 30%;" onclick="App.AddNewProduct()">ADD</button>
+                  </td>
+                </tr>
+              </table>
+          </div>
+          <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+      </div>
+      <!-- Buy ProductPage -->
+      <div class="row" style="display: none;" id="buyProductPage">
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+        <div class="col col-12 col-sm-8 col-lg-8 col-md-8">
+            <table class="table">
+              <tr>
+                <td colspan="2" style="text-align: center;"><h2 style="background-color: blue;color: white;">BUY A PRODUCT</h2></td>
+              </tr>
+              <tr>
+                <td><h4 style="color: blue;" >Product ID</h4></td>
+                <td><input type="number" class="form-control" id="pid"></td>
+              </tr>
+              <tr>
+                <td><h4 style="color: blue;" >Quantity</h4></td>
+                <td><input type="number" class="form-control" id="p_q"></td>
+              </tr>
+             
+              <tr>
+                <td colspan="2" style="text-align: center;">
+                  <button type="button" class="btn btn-primary btn-lg" style="width: 30%;" onclick="App.BuyProduct()">BUY</button>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <div class="col col-12 col-sm-2 col-lg-2 col-md-2"></div>
+    </div>
+
+
+
+    </div>
+   
+    
+
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
